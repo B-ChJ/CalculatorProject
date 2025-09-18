@@ -1,8 +1,11 @@
 package com.example.calculator;
 
 public class Calculator {
-    double current;
+    double num1, num2, current;
+    char operator;
 
+
+    //3. 기능 정의
     public double add(double num1, double num2){
         current = num1 + num2;
         return current;
@@ -23,8 +26,8 @@ public class Calculator {
         current = num1 % num2;
         return current;
     }
-    public double square(double num1){
-        current = num1 * num1;
+    public double square(double num1, double num2){
+        current = Math.pow(num1, num2);
         return current;
     }
 }
