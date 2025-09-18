@@ -4,7 +4,6 @@ public class Calculator {
     double num1, num2, current;
     char operator;
 
-
     //3. 기능 정의
     public double add(double num1, double num2){
         current = num1 + num2;
