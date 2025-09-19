@@ -13,14 +13,19 @@ public class Main {
         //입력받은 문자열 나누기 → ArrayFormula.java
         ArrayFormula arr = new ArrayFormula();
         ArrayList<String> arrAfter = arr.makeArray(arrBefore);
+        boolean power = true;
         //예외 처리 (0으로 나누기)
         int i;
         for (i = 0; i < arrAfter.size() - 1; i++) {
             if (arrAfter.get(i) == "/" && arrAfter.get(i + 1) == "0") {
                 System.out.println("ERROR");
+                //아래 while문이 실행되지 않도록 처리
+                power = false;
+                //for 반복문 종료
+                break;
             }
         }
-        boolean power = true;
+
         while (power) {
             //arrAfter 배열을 Calculator로 보내 연산 작업을 하고 결과값 current를 받는다.
             while (arrAfter.size() > 1) {
