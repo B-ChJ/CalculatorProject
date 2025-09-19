@@ -20,7 +20,7 @@ public class Main {
                 System.out.println("ERROR");
             }
         }
-        System.out.println(arrAfter.size());
+
         //arrAfter 배열을 Calculator로 보내 연산 작업을 하고 결과값 current를 받는다.
         while (arrAfter.size() > 1) {
             Calculation calc = new Calculation();
@@ -33,7 +33,7 @@ public class Main {
                 n = arrAfter.indexOf("^");
                 double num1 = Double.parseDouble(arrAfter.get(n - 1));
                 double num2 = Double.parseDouble(arrAfter.get(n + 1));
-                calc.CalculatePackage(num1, num2, operator);
+                current = calc.CalculatePackage(num1, num2, operator);
                 arrAfter.set(n, String.valueOf(current));
                 arrAfter.remove(n - 1);
                 arrAfter.remove(n);
@@ -43,7 +43,7 @@ public class Main {
                 n = arrAfter.indexOf("*");
                 double num1 = Double.parseDouble(arrAfter.get(n - 1));
                 double num2 = Double.parseDouble(arrAfter.get(n + 1));
-                calc.CalculatePackage(num1, num2, operator);
+                current = calc.CalculatePackage(num1, num2, operator);
                 arrAfter.set(n, String.valueOf(current));
                 arrAfter.remove(n - 1);
                 arrAfter.remove(n);
@@ -53,7 +53,7 @@ public class Main {
                 n = arrAfter.indexOf("/");
                 double num1 = Double.parseDouble(arrAfter.get(n - 1));
                 double num2 = Double.parseDouble(arrAfter.get(n + 1));
-                calc.CalculatePackage(num1, num2, operator);
+                current = calc.CalculatePackage(num1, num2, operator);
                 arrAfter.set(n, String.valueOf(current));
                 arrAfter.remove(n - 1);
                 arrAfter.remove(n);
@@ -63,7 +63,7 @@ public class Main {
                 n = arrAfter.indexOf("%");
                 double num1 = Double.parseDouble(arrAfter.get(n - 1));
                 double num2 = Double.parseDouble(arrAfter.get(n + 1));
-                calc.CalculatePackage(num1, num2, operator);
+                current = calc.CalculatePackage(num1, num2, operator);
                 arrAfter.set(n, String.valueOf(current));
                 arrAfter.remove(n - 1);
                 arrAfter.remove(n);
@@ -74,7 +74,7 @@ public class Main {
                     n = arrAfter.indexOf("+");
                     double num1 = Double.parseDouble(arrAfter.get(n - 1));
                     double num2 = Double.parseDouble(arrAfter.get(n + 1));
-                    calc.CalculatePackage(num1, num2, operator);
+                    current = calc.CalculatePackage(num1, num2, operator);
                     arrAfter.set(n, String.valueOf(current));
                     arrAfter.remove(n - 1);
                     arrAfter.remove(n);
@@ -84,14 +84,17 @@ public class Main {
                     n = arrAfter.indexOf("-");
                     double num1 = Double.parseDouble(arrAfter.get(n - 1));
                     double num2 = Double.parseDouble(arrAfter.get(n + 1));
-                    calc.CalculatePackage(num1, num2, operator);
+                    current = calc.CalculatePackage(num1, num2, operator);
                     arrAfter.set(n, String.valueOf(current));
                     arrAfter.remove(n - 1);
                     arrAfter.remove(n);
                 }
             }
-            System.out.println(calc.current);
+            //연산 과정 확인용 출력
+            //System.out.println(arrAfter);
+            //System.out.println(calc.current);
         }
+        System.out.println("결과 : " + current);
     }
 }
 

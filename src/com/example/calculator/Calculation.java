@@ -4,7 +4,7 @@ public class Calculation extends Calculator {
     //중간 계산 결과 current 객체 생성
     public double current;
 
-    public void CalculatePackage(double num1, double num2, char operator) {
+    public double CalculatePackage(double num1, double num2, char operator) {
         switch (operator) {
             case '+':
                 current = super.add(num1, num2);
@@ -28,6 +28,7 @@ public class Calculation extends Calculator {
             default:
                 System.out.println(operator + "은(는) 계산할 수 없는 연산자입니다.");
                 break;
+        }
+        return current;
     }
-}
 }
